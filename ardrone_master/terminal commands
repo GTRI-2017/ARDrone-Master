@@ -13,4 +13,11 @@ command for Flat Trim:
 command for Takoff:
 	rostopic pub -1 ardrone/takeoff std_msgs/Empty
 
+COMMAND FOR __:
+	__
 
+command for __:
+	__
+
+command for __:
+	__
