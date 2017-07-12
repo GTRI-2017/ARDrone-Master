@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
 )
-
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -114,11 +113,8 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
-)
-
+include_directories(include ${catkin_INCLUDE_DIRS} )
+##${ardrone_master_INCLUDE_DIRS}
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/ardrone_master.cpp
@@ -171,11 +167,11 @@ include_directories(
 # )
 
 ## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#install(DIRECTORY include//
+#   DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
 #   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+ #  PATTERN ".svn" EXCLUDE
+ #)
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
@@ -200,9 +196,9 @@ add_executable(systemtest systemtest.cpp)
 target_link_libraries(systemtest ${catkin_LIBRARIES})
 add_executable(flightanim flightanim.cpp)
 target_link_libraries(flightanim ${catkin_LIBRARIES})
-add_executable(search+ search+.cpp)
-target_link_libraries(search+ ${catkin_LIBRARIES})
-add_executable(search++ search++.cpp)
-target_link_libraries(search++ ${catkin_LIBRARIES})
 add_executable(approach approach.cpp)
 target_link_libraries(approach ${catkin_LIBRARIES})
+add_executable(all_simple all_simple.cpp)
+target_link_libraries(all_simple ${catkin_LIBRARIES})
+add_executable(masterrunner masterrunner.cpp)
+target_link_libraries(masterrunner ${catkin_LIBRARIES})
